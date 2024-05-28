@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <link rel="shortcut icon" href="images/bloom.png" type="image/x-icon">
+ <link rel="stylesheet" href="../styles/home.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Varela+Round&display=swap" rel="stylesheet">
+    <title>Bloom | Your Online Store</title>
+</head>
+<style>
+  .btn-status{display: flex;justify-content: center;align-items: center;width: 100%;}
+  .btn-status button{margin: 1rem;padding:.4rem;cursor: pointer;background: white;}
+  
+  #btn-pending{border: 2px solid rgb(198, 133, 11);color: rgb(198, 133, 11);background: rgb(246, 231, 202);}
+  #btn-cancel{border: 2px solid red;color: red;
+  background: rgb(248, 203, 203);}#btn-deli{border: 2px solid green;color: green;
+  background: rgb(197, 246, 197);}
+#order-pending{display: block;}#order-cancel{display: none;}#order-deli{display: none;}
+.error{text-align: center;color: grey;}
+</style>
+<body id="body">
+    <div id="loader">
+        <div class="load"><ul><li></li>
+        <li></li>
+        <li></li></ul></div>
+    </div>
+    <div id="body-main">
+      <div id="body-home">
+     
+
+<div class="menu-i"><img src="../images/menu.png" width="50" height="50" alt=""
+        id="menu-i-img"></div>
+        <div id="navbar-user">
+        <ul>
+            <img src="../images/cross.png" width="50" height="50" alt="" id="res-img"><br>
+          <img src="../images/user.png" alt="">
+           <h2>{{blusername}}</h2>
+           <h4>{{blemail}}</h4>
+           <a href="/home"><li>Profile</li></a>  
+        <a href="/product"><li>Products</li></a>
+        <a href="/finances"><li>Finance</li></a>
+        <a href="/order"><li>Orders</li></a>
+         <a href="/contact"><li>Contact Us</li></a> 
+         <a href="/logout"><li>Logout</li></a> 
+      
+        </ul></div>
+<div id="navbar-users">
+        <ul>
+            <img src="../images/cross.png" width="50" height="50" alt="" id="res-img"><br>
+          <img src="../images/user.png" alt="">
+           <h2>{{blusername}}</h2>
+           <h4>{{blemail}}</h4>
+        <a href="/home"><li>Profile</li></a>  
+        <a href="/product"><li>Products</li></a>
+        <a href="/finances"><li>Finance</li></a>
+        <a href="/order"><li>Orders</li></a>
+
+         <a href="/contact"><li>Contact Us</li></a> 
+         <a href="/logout"><li>Logout</li></a> 
+      
+        </ul>
+       
+        </div>
+        {{!-- profile --}}
+    <div class="home-main-part">
+        <div id="product">
+             <div id="del">
+<div id="delete_prompt">
+  <h3>Enter the id of the product to confirm : </h3><br>
+ <form action="/product/delete" method="post">
+   <input type="text" placeholder="Enter Product ID" name="product_id_dle" required><br><br>
+   <button class="del-btn" type="submit">Delete</button>
+   <button class="remove" type="button" onclick="del_del()">Cancel</button>
+ </form>
+</div></div>
+          <div class="product-view">
+<div class="btn-status">
+  <button id="btn-pending">Pending</button>
+  <button id="btn-cancel">Cancelled</button><button id="btn-deli">Delivered</button>
+</div>
+
+            {{!-- pendingorder --}}
+                <ul id="order-pending"><br>
+              
+               
+                <div class="error">
+                 <h3>{{bl_no_found_pending}}</h3></div>
+                 {{#each bl_order_pending}}
+                <li>
+                <img src="../{{this.product_image}}" alt="" width="100" height="100"><br>
+                 #{{this._id}} <br>
+                  {{this.product_name}} <br>
+                   ₹{{this.price}}.00<br>
+                    <button class="del-btn" onclick="show_order('{{this._id}}')">More Details</button>
+              
+                </li>
+            <br>
+              {{/each}}
+        
+                </ul>
+        {{!-- cancelled order  --}}
+                <ul id="order-cancel">
+                  
+                  <br>
+                  <div class="error">
+                 <h3>{{bl_no_found_cancel}}</h3></div>
+                  {{#each bl_order_cancel}}
+              
+                <li>
+                <img src="../{{this.product_image}}" alt="" width="100" height="100"><br>
+                 #{{this._id}} <br>
+                  {{this.product_name}} <br>
+                   ₹{{this.price}}.00<br>
+                    <button class="del-btn" onclick="show_order('{{this._id}}')">More Details</button>
+              
+                </li>
+            <br>
+              {{/each}}
+                </ul>
+{{!-- delivered  --}}
+<ul id="order-deli"><br>
+  
+                  <div class="error">
+                 <h3>{{bl_no_found_delivered}}</h3></div>
+                  {{#each bl_order_deli}}
+              
+                <li>
+                <img src="../{{this.product_image}}" alt="" width="100" height="100"><br>
+                 #{{this._id}} <br>
+                  {{this.product_name}} <br>
+                   ₹{{this.price}}.00<br>
+                    <button class="del-btn" onclick="show_order('{{this._id}}')">More Details</button>
+              
+                </li>
+            <br>
+              {{/each}}
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+      </div>
+    </div>
+</body>
+<script>
+// pending   delivered  cancelled
+ window.addEventListener('load',()=>{
+        document.getElementById('loader').style.display='none'
+        document.getElementById('body-main').style.display='block'
+    })
+
+//pending
+document.getElementById('btn-pending').addEventListener('click',()=>{
+  document.getElementById('order-cancel').style.display='none'
+  document.getElementById('order-deli').style.display='none'
+    document.getElementById('order-pending').style.display='block'
+    document.getElementById('btn-pending').style.opacity='.5'
+    document.getElementById('btn-cancel').style.opacity='1'
+    document.getElementById('btn-deli').style.opacity='1'
+})
+
+//delivered
+document.getElementById('btn-deli').addEventListener('click',()=>{
+  document.getElementById('order-pending').style.display='none'
+  document.getElementById('order-cancel').style.display='none'
+    document.getElementById('order-deli').style.display='block'
+    document.getElementById('btn-deli').style.opacity='.5'
+    document.getElementById('btn-cancel').style.opacity='1'
+    document.getElementById('btn-pending').style.opacity='1'
+
+})
+
+//cancelled
+document.getElementById('btn-cancel').addEventListener('click',()=>{
+  document.getElementById('order-pending').style.display='none'
+  document.getElementById('order-deli').style.display='none'
+    document.getElementById('order-cancel').style.display='block'
+    document.getElementById('btn-cancel').style.opacity='.5'
+    document.getElementById('btn-pending').style.opacity='1'
+    document.getElementById('btn-deli').style.opacity='1'
+
+
+
+})
+
+
+
+    document.getElementById('menu-i-img').addEventListener('click',()=>{
+        document.getElementById('navbar-user').style.marginLeft='0rem'
+    })
+    document.getElementById('res-img').addEventListener('click',()=>{
+        document.getElementById('navbar-user').style.marginLeft='-20rem'
+    })
+function show_order(id){
+  window.open(`http://localhost:8000/order/${id}`)
+  }
+
+</script>
+</html>

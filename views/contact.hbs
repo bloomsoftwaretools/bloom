@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome Back !</title>
+    <link rel="shortcut icon" href="images/bloom.png" type="image/x-icon">
+    <link rel="stylesheet" href="styles/register.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Varela+Round&display=swap" rel="stylesheet">
+</head>
+<style>
+    form{padding: 4rem;}
+</style>
+<body id="body">
+    <div id="loader">
+        <div class="load"><ul><li></li>
+        <li></li>
+        <li></li></ul></div>
+    </div>
+<div id="body-main">
+    <div class="login-form">
+    <form action="/contact" id="form-id" method="post" autocomplete="off">
+    <div class="head-form">
+        <img src="images/bloom.png" alt="Bloom" >
+        <br><h1>Contact Us</h1></div>
+    <h1>Get In Touch!</h1><br>
+    <h4></h4>
+    <input type="text" placeholder="Name" name="username_contact" required minlength="3"><br>
+    <input type="email" placeholder="Email" name="email_contact" required><br>
+    <textarea name="msg_contact" id="" cols="30" rows="10" placeholder="Message" minlength="10"></textarea>
+   <br> <button type="submit">Send&nbsp;&nbsp;&nbsp;></button><br><br>
+   
+    </form>
+</div>
+
+{{!-- footer  --}}
+<footer>
+    <div class="foot">
+<ul>
+    <li>Accounts</li>
+    <a href="">
+        <li>Facebook</li>
+    </a><a href="">
+        <li>Instagram</li>
+    </a><a href="">
+        <li>Twitter</li>
+    </a>
+</ul>
+
+<ul>
+    <li>Networks</li>
+    <a href="/term/conditions"><li>Terms&Conditions</li></a>
+    <a href="/login"><li>Login</li></a>
+</ul>
+<ul>
+    <li>Origin</li>
+    <li>India</li>
+</ul>
+    </div>
+</footer>
+</div>
+</body>
+<script>
+    window.addEventListener('load',()=>{
+        document.getElementById('loader').style.display='none'
+        document.getElementById('body-main').style.display='block'
+        document.getElementById('body').style.background='linear-gradient(35deg, rgb(0, 81, 161), rgb(7, 219, 204)'
+    })
+</script>
+</html>

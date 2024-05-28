@@ -1,0 +1,81 @@
+*{margin: 0;padding: 0;
+    font-family: "Varela Round", sans-serif;
+    font-weight: 400;word-spacing:1px;letter-spacing:1px;
+    font-style: normal;
+  }
+/* scrollbar */
+
+  #loader{display: flex;justify-content: center;margin-top:16rem}
+  .load ul li{height:2rem;width:2rem;background: rgb(7, 219, 204);list-style: none;
+margin: 1rem;animation: scaling2 infinite 1s,backchange infinite 2s;
+  }.load ul{display: flex;}
+  #body-main{display: none;}
+  #navbar-user{background: rgb(0,81,161);display:none;height: 100vh;
+    padding-top:2rem;width: auto;position: fixed;margin-left: 0rem;overflow-y: scroll;}
+#navbar-user ul li{padding:4rem;list-style: none;color:white;
+border-bottom: 1px solid rgb(209, 204, 204);margin-top:0rem;padding-top:1rem;
+padding-bottom:1rem;}#navbar-user ul a{color: white;text-decoration: none;}
+#navbar-user ul{text-align: center;}.navbar-user h3{color: white;font-size: 20px;
+margin-bottom:1rem;margin-top:2rem;overflow-y: scroll;}
+#navbar-user ul li:hover{color:white;cursor: pointer;background: rgb(7, 219, 204);}
+h2{color: white;margin-top:0.5rem;width: 100%;}h4{color: white;margin-top:0.5rem;margin-bottom:1rem;}
+#navbar-user ul img{padding-top:1rem;}
+/*  */
+#navbar-users{background: rgb(0,81,161);display: inline-block;height: 100vh;
+  padding-top:2rem;width: auto;position: fixed;margin-left: 0rem;overflow-y: scroll;}
+#navbar-users ul li{padding:4rem;list-style: none;color:white;
+border-bottom: 1px solid rgb(209, 204, 204);margin-top:0rem;padding-top:1rem;
+padding-bottom:1rem;}#navbar-users ul a{color: white;text-decoration: none;}
+#navbar-users ul{text-align: center;}.navbar-users h3{color: white;font-size: 20px;
+margin-bottom:1rem;margin-top:2rem;overflow-y: scroll;}
+#navbar-users ul li:hover{color:white;cursor: pointer;background: rgb(7, 219, 204);}
+h2{color: white;margin-top:0.5rem;width: 100%;}h4{color: white;margin-top:0.5rem;margin-bottom:1rem;}
+#navbar-users ul img{padding-top:1rem;}
+#res-img{display: none;}
+.menu-i{position: absolute;left: 1rem;top: 1rem;display: none;}
+#body-main{display: none;}
+#body-home{display: flex;}
+.home-main-part{margin-left:18rem;width: 100%;margin-top:2rem;height: auto;}
+
+ /* profile  */
+#profile{text-align: center;font-size: 16px;display: flex;justify-content: center;}
+.profile-view{text-align: left;box-shadow: 1px 0px 18px 0px rgba(0,0,0,0.2);
+padding:3rem;}.profile-view span{background: whitesmoke;padding: .5rem;
+display: inline-block;}.profile-view h1{font-size: 18px;margin-top: 1rem;}
+.profile-view a{color: white;background: rgb(0,81,161);padding: 1rem;
+margin-top:2rem;text-decoration: none;cursor: pointer;font-size: 16px;}
+.profile-i{text-align: center;}
+/* profile  */
+
+/* product  */
+#product{text-align: center;font-size: 16px;display: flex;justify-content: center;}
+.product-view{text-align: left;
+padding:3rem;}.product-view h1{font-size: 18px;margin-top: 1rem;}
+
+.product-view ul li{color: black;text-decoration: none;list-style: none;
+  box-shadow: 1px 0px 18px 0px rgba(0,0,0,0.2);margin-top: 1rem;padding: 1rem;line-height:1.5rem;}
+.del-btn{background-color: red;color: white;padding:0.8rem;font-size: 14px;
+border:1px solid red;margin-top:0.5rem;cursor: pointer;}
+.remove{background-color: white;color:black;padding:0.8rem;font-size: 16px;
+  border: 0;margin-top:0.5rem;cursor: pointer;border: 1px solid black;margin-left: 1rem;}
+  /* product  */
+#btn-add{padding: 1rem;color: white;background: rgb(7, 219, 204);border: 0;
+  cursor: pointer;}
+#delete_prompt{position: absolute;padding:2rem;box-shadow: 0px 1px 28px 1px 
+  rgba(0,0,0,0.2);background-color: white;border-radius: 2rem;}
+  #delete_prompt input{font-size: 16px;outline:0;padding: 0.5rem;width: 250px;
+  border: 1px solid black;}#delete_prompt input:focus{box-shadow: 0px 0px 10px 0px rgb(7, 219, 204);}
+#del{display: flex;justify-content: center;width: 100%;position: absolute;
+margin-top:-25rem;transition: .5s;
+}.btn-view{padding:.8rem;font-size: 14px;background: rgb(0,81,161);color: white;border: 0;cursor: pointer;}
+/* responsive */
+@media(max-width:600px){
+  .menu-i{display: block;}
+  #res-img{display: block;}
+  #navbar-user{position: fixed;margin-left: -20rem;transition: .5s;overflow-y:scroll;
+    display: inline-block;}
+  .home-main-part{margin-left: 0;margin-top:5rem;}
+  #navbar-users{display: none;}
+}
+
+form button{font-size: 14px;}

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{bl_name}} | {{bl_id}} !</title>
+    <link rel="shortcut icon" href="./images/bloom.png" type="image/x-icon">
+    <link rel="stylesheet" href="../styles/login.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Varela+Round&display=swap" rel="stylesheet">
+</head>
+<style>
+    footer{background: whitesmoke;}
+</style>
+<body id="body">
+    <div id="loader">
+        <div class="load"><ul><li></li>
+        <li></li>
+        <li></li></ul></div>
+    </div>
+<div id="body-main">
+    <div class="navbar">
+        <marquee behavior="scroll" direction="left">Powered & Designed By Bloom Stores
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            Powered & Designed By Bloom Stores
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            Powered & Designed By Bloom Stores
+        </marquee>
+    </div>
+    <div class="bl-product">
+        <div class="product-img">
+            <img src="../{{bl_img}}" alt="" width="300" height="250">
+        </div>
+        <div class="product-d">
+            <h3>{{bl_name}}</h3><br>
+            <h3> ₹{{bl_price}} &nbsp;&nbsp;&nbsp;<span id="dis"><span id="diz">11% Off</span>
+            &nbsp;&nbsp;
+            29% Off</span>
+            </h3><br>
+            
+<br><h3>Product Description : </h3><br>
+            {{bl_detail}}  <br><br>
+   
+            <a href="/product/order/{{bl_id}}"><button id="ordernow">Order Now</button></a>
+            <br><br>
+            <img src="../images/badge.png" alt="" width="30" height="30"> Best Quality Deal  <br><br>
+            <img src="../images/trust.png" alt="" width="30" height="30"> Trusted Seller and Product 
+        <br><br><br>
+        <h3>Seller Name &nbsp;&nbsp;:&nbsp;&nbsp;{{bl_cp}}</h3>
+        
+        </div>
+    </div><br><br><br>
+<div class="product-img-d"><h3>Product Images</h3><br>
+    <img src="../{{bl_img}}" alt="" width="300" height="250">
+</div>
+{{!-- footer  --}}
+<footer>
+    <div class="foot">
+<ul>
+    <li>Accounts</li>
+    <a href="">
+        <li>Facebook</li>
+    </a><a href="">
+        <li>Instagram</li>
+    </a><a href="">
+        <li>Twitter</li>
+    </a>
+</ul>
+
+<ul>
+    <li>Networks</li>
+    <a href="termsandconditions.pdf" download="termsandconditions.pdf"><li>Terms&Conditions</li></a>
+
+    <a href="/login"><li>Login</li></a>
+</ul>
+<ul>
+    <li>Origin</li>
+    <li>India</li>
+</ul>
+    </div>
+</footer>
+</div>
+</body>
+<script>
+    window.addEventListener('load',()=>{
+        document.getElementById('loader').style.display='none'
+        document.getElementById('body-main').style.display='block'
+       
+    })
+</script>
+</html>

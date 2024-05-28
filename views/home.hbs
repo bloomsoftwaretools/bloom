@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <link rel="shortcut icon" href="images/bloom.png" type="image/x-icon">
+ <link rel="stylesheet" href="styles/home.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Varela+Round&display=swap" rel="stylesheet">
+    <title>Bloom | Your Online Store</title>
+</head>
+<body id="body">
+    <div id="loader">
+        <div class="load"><ul><li></li>
+        <li></li>
+        <li></li></ul></div>
+    </div>
+    <div id="body-main">
+      <div id="body-home">
+<div class="menu-i"><img src="images/menu.png" width="50" height="50" alt=""
+        id="menu-i-img"></div>
+        <div id="navbar-user">
+        <ul>
+            <img src="images/cross.png" width="50" height="50" alt="" id="res-img"><br>
+          <img src="images/user.png" alt="">
+           <h2>{{blusername}}</h2>
+           <h4>{{blemail}}</h4>
+          <a href="/home"><li>Profile</li></a>  
+        <a href="/product"><li>Products</li></a>
+        <a href="/finances"><li>Finance</li></a>
+        <a href="/order"><li>Orders</li></a>
+
+         <a href="/contact"><li>Contact Us</li></a> 
+         <a href="/logout"><li>Logout</li></a>  
+       
+        </ul></div>
+<div id="navbar-users">
+        <ul>
+            <img src="images/cross.png" width="50" height="50" alt="" id="res-img"><br>
+          <img src="images/user.png" alt="">
+           <h2>{{blusername}}</h2>
+           <h4>{{blemail}}</h4>
+        <a href="/home"><li>Profile</li></a>  
+        <a href="/product"><li>Products</li></a>
+        <a href="/finances"><li>Finance</li></a>
+        <a href="/order"><li>Orders</li></a>
+
+         <a href="/contact"><li>Contact Us</li></a> 
+         <a href="/logout"><li>Logout</li></a> 
+       
+        </ul>
+       
+        </div>
+        {{!-- profile --}}
+    <div class="home-main-part">
+        <div id="profile">
+          <div class="profile-view">
+                <div class="profile-i"><img src="images/bloom.png" width="100" height="100" alt=""></div>
+          <h1>Username</h1><br><span>{{blusername}}</span>
+          <h1>Email </h1><br><span>{{blemail}}</span>
+          <h1>Phone </h1><br><span>{{blphone}}</span>
+          <h1>Password </h1><br><span>******</span><br><br><br>
+                <a href="/logout">Logout</a><br><br>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+      </div>
+    </div>
+</body>
+<script>
+    window.addEventListener('load',()=>{
+        document.getElementById('loader').style.display='none'
+        document.getElementById('body-main').style.display='block'
+    })
+
+    document.getElementById('menu-i-img').addEventListener('click',()=>{
+        document.getElementById('navbar-user').style.marginLeft='0rem'
+    })
+    document.getElementById('res-img').addEventListener('click',()=>{
+        document.getElementById('navbar-user').style.marginLeft='-20rem'
+    })
+ 
+ function show_product(){
+    window.open('/product')
+ }
+  function show_profile(){
+    window.open('/home')
+ } function show_order(){
+    window.open('/order')
+ } function show_finance(){
+    window.open('/finance')
+ } 
+</script>
+</html>

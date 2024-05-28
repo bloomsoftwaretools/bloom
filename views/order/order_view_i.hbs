@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Id : {{bl_id}} </title>
+    <link rel="shortcut icon" href="./images/bloom.png" type="image/x-icon">
+    <link rel="stylesheet" href="../styles/login.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Varela+Round&display=swap" rel="stylesheet">
+</head>
+<style>
+    .product-d img{margin-right: 1rem;width:20px;height:20px;}
+    footer{background: whitesmoke;}#cancel-oder{padding:1rem;font-size: 14px;color: white;background-color: red;border: 0;}
+    #span-status{padding: .5rem;}#h-q{background: rgb(197, 246, 197);padding: .6rem;
+    color: green;border: 2px solid green;border-radius:10px;}
+.form {margin-top:-5rem;display: inline-block;}.form form{display: inline-block;}
+    .form{display: flex;align-items: center;}
+    #cancel-oder:hover{box-shadow: 1px 2px 18px 1px rgba(255, 136, 136, 0.5);transition: .5s;}
+    #deli-order{padding: 1rem;color: white;background: green;font-size: 14px;border: 0;}
+</style>
+<body id="body">
+    <div id="loader">
+        <div class="load"><ul><li></li>
+        <li></li>
+        <li></li></ul></div>
+    </div>
+<div id="body-main">
+    <div class="navbar">
+        <marquee behavior="scroll" direction="left">Powered & Designed By Bloom Stores
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            Powered & Designed By Bloom Stores
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            Powered & Designed By Bloom Stores
+        </marquee>
+    </div>
+    <div class="bl-product">
+        <div class="product-img">
+        
+            <img src="../{{bl_product_image}}" alt="" width="300" height="250">
+        </div>
+        <div class="product-d">
+            <h4> #{{bl_id}}</h4><br>
+            <br>
+            <h3> Product Name : {{bl_product}}</h3><br><br>
+            <h3>Quantity : X <span id="h-q">{{bl_q}}</span></h3><br>
+           Payment : {{bl_mode}} <br><br>
+            <h4>Total :  ₹{{total_price}} &nbsp;&nbsp;&nbsp;
+            </h4><br><br>
+            <span id="span-status">{{bl_status}}</span>
+           <br> <br>
+<br><h2>Order Details : </h2><br>
+            <img width="24" height="24" src="https://img.icons8.com/ios-filled/50/men-age-group-4.png" alt="Customer : "/> {{bl_customer}}  <br><br>
+<img width="24" height="24" src="https://img.icons8.com/ios-filled/50/truck.png" alt="Address : "/> 
+{{bl_address}} , {{bl_state}} - {{bl_pin}} - {{bl_landmark}}
+            <br><br><img width="24" height="24" src="https://img.icons8.com/ios-filled/50/phone.png" alt="Phone :"/> {{bl_phone}}
+<br><br>
+            <img width="24" height="24" src="https://img.icons8.com/ios-filled/50/card-in-use.png" alt="Mode of Payment : "/>{{bl_mode}}
+            <br><br>
+           <div class="form" id="form-btn">
+             <form action="/order/cancel/{{bl_id}}" method="post" id="form-cancel">
+            <button type="submit" id="cancel-oder">Cancel Order</button></form>
+            <form action="/order/delivered/{{bl_id}}" method="post" id="form-dei">
+            <button type="submit" id="deli-order">Order Delivered</button></form>
+           </div>
+        </div>
+    </div><br><br><br>
+{{!-- footer  --}}
+<footer>
+    <div class="foot">
+<ul>
+    <li>Accounts</li>
+    <a href="">
+        <li>Facebook</li>
+    </a><a href="">
+        <li>Instagram</li>
+    </a><a href="">
+        <li>Twitter</li>
+    </a>
+</ul>
+
+<ul>
+    <li>Networks</li>
+    <a href="termsandconditions.pdf" download="termsandconditions.pdf"><li>Terms&Conditions</li></a>
+
+    <a href="/login"><li>Login</li></a>
+</ul>
+<ul>
+    <li>Origin</li>
+    <li>India</li>
+</ul>
+    </div>
+</footer>
+</div>
+</body>
+<script>
+    if(document.getElementById('span-status').innerText=='Pending'){
+
+    document.getElementById('span-status').style.color='orange'
+    }
+    if(document.getElementById('span-status').innerText=='Delivered'){
+    document.getElementById('span-status').style.color='green'
+    document.getElementById('form-btn').style.display='none'
+    }
+    if(document.getElementById('span-status').innerText=='Cancelled'){
+    document.getElementById('span-status').style.color='red'
+    document.getElementById('form-btn').style.display='none'
+
+    }
+    window.addEventListener('load',()=>{
+        document.getElementById('loader').style.display='none'
+        document.getElementById('body-main').style.display='block'
+       
+    })
+</script>
+</html>

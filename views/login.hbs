@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome Back !</title>
+    <link rel="shortcut icon" href="images/bloom.png" type="image/x-icon">
+    <link rel="stylesheet" href="styles/login.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Varela+Round&display=swap" rel="stylesheet">
+</head>
+<body id="body">
+    <div id="loader">
+        <div class="load"><ul><li></li>
+        <li></li>
+        <li></li></ul></div>
+    </div>
+<div id="body-main">
+    <div class="login-form">
+    <form action="/login" id="form-id" method="post" autocomplete="off">
+    <div class="head-form">
+        <img src="images/bloom.png" alt="Bloom" >
+        <br><h1>Bloom Accounts</h1></div>
+    <h1>Welcome Back !</h1><br>
+    <h4>Enter Username & Password to continue...</h4>
+    <input type="text" placeholder="Username" name="username_login" required><br>
+    <input type="password" placeholder="Password" name="password_login" required><br>
+    <button type="submit">Log In&nbsp;&nbsp;&nbsp;></button><br><br>
+    <a href="/register"><button type="button">Create Account</button></a>
+    </form>
+</div>
+
+<div class="heading-l">
+    <div class="head-l">
+<ul id="head-ul">
+    <li><img src="images/online-shopping.png" width="200" height="200" alt=""></li>
+
+</ul>
+        <h1>Create Your Digital Store Now ...</h1><br>
+        <span>We provide you a platform to host your store online for free.
+            <br>You can create a single product store for absolutely <span id="free">$200.00</span> 
+            &nbsp;<span id="price">$00.00</span>
+        </span><br>
+       <br><br> <a href="#form-id">Create Now &nbsp;&nbsp;></a>
+    </div>
+</div>
+
+{{!-- footer  --}}
+<footer>
+    <div class="foot">
+<ul>
+    <li>Accounts</li>
+    <a href="">
+        <li>Facebook</li>
+    </a><a href="">
+        <li>Instagram</li>
+    </a><a href="">
+        <li>Twitter</li>
+    </a>
+</ul>
+
+<ul>
+    <li>Networks</li>
+    <a href="termsandconditions.pdf" download="termsandconditions.pdf"><li>Terms&Conditions</li></a>
+    <a href="#form-id"><li>Login</li></a>
+</ul>
+<ul>
+    <li>Origin</li>
+    <li>India</li>
+</ul>
+    </div>
+</footer>
+</div>
+</body>
+<script>
+    window.addEventListener('load',()=>{
+        document.getElementById('loader').style.display='none'
+        document.getElementById('body-main').style.display='block'
+        document.getElementById('body').style.background='linear-gradient(35deg, rgb(0, 81, 161), rgb(7, 219, 204)'
+    })
+</script>
+</html>

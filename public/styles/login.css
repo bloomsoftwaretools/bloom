@@ -1,0 +1,61 @@
+*{margin: 0;padding: 0;
+    font-family: "Varela Round", sans-serif;
+    font-weight: 400;word-spacing:1px;letter-spacing:1px;
+    font-style: normal;
+  }
+
+#loader{display: flex;justify-content: center;margin-top:16rem}
+.load ul li{height:2rem;width:2rem;background: rgb(7, 219, 204);list-style: none;margin: 1rem;
+animation: scaling2 infinite 1s,backchange infinite 2s;
+}
+.load ul{display: flex;}
+  #body-main{display: none;}
+/* colors to be used (white, rgb(0, 81, 161), rgb(4, 211, 243);*/ 
+ body{background: white;}html{scroll-behavior: smooth;}
+.login-form{display: flex;align-items: center;justify-content: center;}
+input,select{padding: 0.5rem;width:250px;height: 20px;font-size: 16px;margin-top: 1rem;
+    margin-bottom: 1rem;outline: 0;border: 1px solid rgb(225, 224, 224);}button{padding:0.8rem;font-size: 14px;background: rgb(0,81,161);
+    color: white;border: 1px solid rgb(0,81,161);cursor: pointer;padding-left: 1rem;
+padding-right: 1rem;opacity:.9;}
+.head-l img{border-radius: 1rem;padding:2rem;box-shadow: 0px 0px 20px 1px rgba(4,211,243,0.2);
+    margin-bottom:2rem;}
+form{margin: 1rem;display: inline-block;padding:1.5rem;background: white;opacity:.99;
+border-radius: 2rem;margin-top: 4rem;padding-bottom:6rem;padding-top: 6rem;}
+    button:hover{background: white;color: rgb(0,81,161);}
+input:focus{box-shadow: 0px 0px 10px 0px rgb(7, 219, 204);}
+#free{text-decoration: line-through;}#price{font-size: 18px;color: black;}
+#head-ul li{list-style: none;display:inline-block;margin:2rem;}
+.head-form{text-align: center;margin-bottom: 1rem;margin-top:-2rem;font-size: 12px;}
+.heading-l{border-radius: 5rem;text-align: center;margin-top:5rem;}
+.head-l{background: white;padding-top: 3rem;padding-bottom: 3rem;}
+.head-l a{text-decoration: none;color: white;background: rgb(0,81,161);
+    border: 1px solid rgb(0,81,161);padding: 1rem;margin-top: 1rem;}
+.head-l a:hover{background: white;color: rgb(0,81,161);}
+.head-l h1{font-size: 25px;}.head-l span{color: rgb(101, 101, 101);}
+footer{margin-top:2rem;background: white;padding-top:2rem;padding-bottom:0rem;display: flex;justify-content: center;}
+.foot{display: flex;}.foot ul{margin: 2rem;justify-content:center;align-items: center;list-style: none;}
+.foot ul li{color: black;margin: 2rem;}.foot ul a li{color: rgb(101, 99, 99);}
+.foot ul a{text-decoration: none;}
+
+#dis{font-size: 25px;color: rgb(0,81,161);}#diz{text-decoration: line-through;font-size: 20px;
+color: rgb(101, 101, 101);}
+.navbar{color: white;background: rgb(7, 219, 204);font-size:15px;text-align: center;
+padding:.2rem;}
+.product-img-d{text-align: center;margin:2rem;}
+.product-d{margin:2rem;margin-top:5rem;}
+.bl-product{display: flex;width: 100%;background: white;flex-direction: column;
+margin-top: 5rem;}
+.product-img{text-align: center;}
+/* aniamtion  */
+
+@keyframes scaling2{
+    50%{transform: scale(1.5);}
+}
+@keyframes backchange{50%{background: rgb(4,211,243);}}
+
+
+/* responsive */
+@media(max-width:690px){
+    footer .foot{display: block;}.foot ul{margin-top:5rem;text-align: center;}
+}
+  

@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <link rel="shortcut icon" href="images/bloom.png" type="image/x-icon">
+ <link rel="stylesheet" href="../styles/home.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Varela+Round&display=swap" rel="stylesheet">
+    <title>Bloom | Your Online Store</title>
+</head>
+<style>
+  html{scroll-behavior: smooth;}
+</style>
+<body id="body">
+    <div id="loader">
+        <div class="load"><ul><li></li>
+        <li></li>
+        <li></li></ul></div>
+    </div>
+    <div id="body-main">
+      <div id="body-home">
+     
+
+<div class="menu-i"><img src="images/menu.png" width="50" height="50" alt=""
+        id="menu-i-img"></div>
+        <div id="navbar-user">
+        <ul>
+            <img src="../images/cross.png" width="50" height="50" alt="" id="res-img"><br>
+          <img src="../images/user.png" alt="">
+           <h2>{{blusername}}</h2>
+           <h4>{{blemail}}</h4>
+           <a href="/home"><li>Profile</li></a>  
+        <a href="/product"><li>Products</li></a>
+        <a href="/finances"><li>Finance</li></a>
+        <a href="/order"><li>Orders</li></a>
+         <a href="/contact"><li>Contact Us</li></a> 
+         <a href="/logout"><li>Logout</li></a> 
+      
+        </ul></div>
+<div id="navbar-users">
+        <ul>
+            <img src="../images/cross.png" width="50" height="50" alt="" id="res-img"><br>
+          <img src="../images/user.png" alt="">
+           <h2>{{blusername}}</h2>
+           <h4>{{blemail}}</h4>
+        <a href="/home"><li>Profile</li></a>  
+        <a href="/product"><li>Products</li></a>
+        <a href="/finances"><li>Finance</li></a>
+        <a href="/order"><li>Orders</li></a>
+
+         <a href="/contact"><li>Contact Us</li></a> 
+         <a href="/logout"><li>Logout</li></a> 
+      
+        </ul>
+       
+        </div>
+        {{!-- profile --}}
+    <div class="home-main-part">
+        <div id="product">
+             <div id="del">
+<div id="delete_prompt">
+  <h3 id="h-form">Enter the id of the product to confirm : </h3><br>
+ <form action="/product/delete" method="post" id="product-delete-form">
+   <input type="text" placeholder="Enter Product ID" name="product_id_dle" required><br><br>
+   <button class="del-btn" type="submit">Delete</button>
+   <button class="remove" type="button" onclick="del_del()">Cancel</button>
+ </form>
+</div></div>
+
+
+          <div class="product-view">
+<a href="/product/add/new"><button id="btn-add">+ Add Product</button></a>
+                <ul>
+                  {{#each product_data}}
+              
+                <li>
+                <img src='../{{this.image}}' alt="" width="100" height="100"><br>
+                 #{{this._id}} <br>
+                  {{this.product_name}} <br>
+                   ₹{{this.price}}.00<br>
+                    <a href="#product-delete-form">
+                      <button class="del-btn" onclick="delete_product('{{this._id}}')">Delete</button>
+                    </a>
+                    <button class="btn-view" id="btn-copy" name="ntn" onclick="copt('http://localhost:8000/product/{{this._id}}')">Copy URL</button>
+                </li>
+            <br>
+              {{/each}}
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+      </div>
+    </div>
+</body>
+<script>
+  
+    window.addEventListener('load',()=>{
+        document.getElementById('loader').style.display='none'
+        document.getElementById('body-main').style.display='block'
+    })
+
+    document.getElementById('menu-i-img').addEventListener('click',()=>{
+        document.getElementById('navbar-user').style.marginLeft='0rem'
+    })
+    document.getElementById('res-img').addEventListener('click',()=>{
+        document.getElementById('navbar-user').style.marginLeft='-20rem'
+    })
+function delete_product(product_id_del){
+  document.getElementById('h-form').innerHTML=`Type "${product_id_del}" to confirm`
+  document.getElementById('del').style.marginTop='15rem'
+ }
+ function del_del(){
+  document.getElementById('del').style.marginTop='-20rem'
+ }
+function copt(id){
+  navigator.clipboard.writeText(id)
+
+}
+</script>
+</html>

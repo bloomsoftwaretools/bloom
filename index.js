@@ -292,18 +292,24 @@ const products=mongoose.model('products',schemas)
 
 
 app.get('/product',(req,res)=>{
-    if(username=='' || username==undefined)
+  if(username=='' || username==undefined)
     res.redirect('/login')
 else{
     products.find({username:username}).then((data)=>{
+var empty_no_product=''
+if(data.length>0)
+    empty_no_product=''
+else
+    empty_no_product='No Listed Product'
 
+console.log(empty_no_product)
         res.render('product/product',{
         blusername:username,
         blemail:email,
-        product_data:data
+        product_data:data,
+        empty_product:empty_no_product
         })
         }).catch(()=>res.render('error_page'))
-}
 })
 
 app.post('/product/delete',(req,res)=>{

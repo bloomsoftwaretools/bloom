@@ -302,7 +302,6 @@ if(data.length>0)
 else
     empty_no_product='No Listed Product'
 
-console.log(empty_no_product)
         res.render('product/product',{
         blusername:username,
         blemail:email,
